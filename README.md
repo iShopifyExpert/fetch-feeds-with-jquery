@@ -1,4 +1,4 @@
-jquery.rss Build Status
+#jquery.rss Build Status
 This plugin can be used to read a RSS feed and transform it into a custom piece of HTML.
 
 Alternatives
