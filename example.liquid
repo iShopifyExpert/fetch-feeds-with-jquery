@@ -1,14 +1,16 @@
 <div id="all-sign"></div>
 <!-- https://github.com/sdepold/jquery-rss -->
-<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.js"></script>
+<link href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css" media="all">
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-rss/3.3.0/jquery.rss.min.js"></script>
 
 <script>
   jQuery(function($) {
     $("#all-sign").rss("http://horoscopeservices.co.uk/daily_delivery/feed.asp?uid=781398952", {
-      entryTemplate: '<li>[{date}]<br/>{title}<br/>{shortBodyPlain}</li>',
-      dateFormat: "ddd, Do MMMM, YYYY, h:mm:ss a",
+      entryTemplate: '<li><a data-fancybox data-src="#model-{index}" href="JavaScript:void(0);"><img width="107" height="109" src="https://cdn.shopify.com/s/files/1/0372/9273/files/{title}.png?v=1594763352" alt="{title}"><span class="sign-title">{title}</span></a><small>{date}</small><span class="sign-description">{shortBodyPlain}</span><div id="model-{index}" style="display: none;max-width:500px;" class="fancybox"><h4>{title}</h4><p>{bodyPlain}</p></div></li>',
+      dateFormat: "ddd, Do MMMM, YYYY,</br> h:mm:ss a",
       limit: 12,
      });
   });
